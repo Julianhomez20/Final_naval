@@ -105,7 +105,7 @@ input:not(:placeholder-shown) ~ label {
   font-weight: bold;
   font-size: large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  margin-bottom: 72px;
+  margin-bottom: 2%;
   &:after,
   &:before {
     content: " ";
@@ -160,7 +160,7 @@ input:not(:placeholder-shown) ~ label {
   font-weight: bold;
   font-size: large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  margin-top: 6%;
+  margin-top: 2%;
   &:after,
   &:before {
     content: " ";
@@ -558,12 +558,12 @@ img {
 
 .content-matrix {
   width: 80%;
-  height: 55vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
 }
 .content-text {
   width: 60%;
@@ -571,7 +571,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
   margin-left: 6%;
 }
 
