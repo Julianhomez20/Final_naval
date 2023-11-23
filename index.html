@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BattleShip</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+</head>
+<body>
+  <div class="container">
+  <!-- <audio src="audio/03 Game Theme.mp3" autoplay loop ></audio> -->
+   <img src="https://dnm.nflximg.net/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABa0A1Jdr9EfCa1TZQZ9tS4Os_rus1JXPbZ_ZkOE_giLN8EhrJYcRuegFyZVpTB0s-V9DObXSu0lUwTM6yZnOOg_F2w.png?r=a81" />
+  <!--Pantalla del menu-->
+  <div id="menu" >
+    <div class="content-button-menu">
+       <div class="text-name">
+        <input type="text" name="username" autocapitalize="none" autocomplete="off" placeholder=" " id="textUser">
+        <label for="textUser">Nickname</label>
+      </div>
+      <button id ="botonJugar">PLAY VS MACHINE</button>
+       <button class ="botonAjustes">SETTINGS</button>
+    </div>
+  </div> 
+
+  <!--Pantalla de reordenar barcos-->
+  <div id="reordenarBarcos" style="display: none;">
+    <div id="matrizDiv" >
+    </div>
+    <div id ="intentosReorganizar">
+      <h3 class ="intentos">
+          YOU HAVE 3 ATTEMPTS TO REARRANGE YOUR SHIPS
+      </h3>
+      <div id="divBotonReordenar">
+        <button id="reordenar">Reorder Ships ships</button>
+      </div>
+      <div>
+        <button id="botonJugar2">Play</button>
+      </div>
+    </div>
+  </div>
+  <!--Pantalla del Juego-->
+ <div id="juegoPrincipal" style="display: none;">
+   
+    <div class="content-matrix">
+      <div id="matriz1Div">
+        </tr>
+      </div>
+        <button id ="jugar">PLAY!</button>
+      <div id="matriz2Div">
+        </tr>
+      </div>
+    </div>
+    <div class="content-text">
+
+      <h3 class="yBoard"></h3>
+      <h3 class="oBoard">Opponent's Board<br>Attack!!!</h3>
+    </div>
+  </div>
+  </div>
+  <script type="module" src="main.js"></script>
+ </body>
+</html>
