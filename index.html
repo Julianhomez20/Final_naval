@@ -59,8 +59,20 @@
     </div>
   </div>
    <div id="volumenControl" class="content-settings" style="display: none;">
-    <input type="range" id="barra" min="0" max="1" step="0.01" ></input>
-    <input type="checkbox" id="mute" ></input>
+    <div class="range" >
+      <div class="sliderValue">
+        <span id="num">50</span>
+      </div>
+      <div class="field">
+        <div class="value left" >0</div>
+        <input type="range" id="barra" min="0" max="1" step="0.01" ></input>
+        <div class="value right" >100</div>
+      </div>
+    </div> 
+    <div class="content-mute">
+      <input type="checkbox" id="mute" ></input>
+      <p>mute</p>
+    </div>
   </div> 
   </div>
   <script type="module" src="main.js"></script>

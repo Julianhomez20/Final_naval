@@ -574,16 +574,113 @@ img {
 }
 
 #volumenControl {
-  width: 80%; /* Ancho en píxeles */
-  height: 70vh; /* Alto en píxeles */
+  width: 40%; /* Ancho en píxeles */
+  height: 26vh; /* Alto en píxeles */
   display: block;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
-  margin-top: 10.3%;
+  flex-direction: column;
+  margin-top: 20%;
 }
 
 .content-settings {
-  width: 70%;
-  height: 80vh;
+  width: 10%;
+  height: 50vh;
+  flex-direction: column;
+  display: flex;
+}
+
+.range {
+  height: 80px;
+  width: 380px;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  padding: 0 65px 0 45px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.range .sliderValue {
+  position: relative;
+  width: 100%;
+}
+.range .sliderValue span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+  font-weight: 500;
+  top: -40px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  line-height: 55px;
+  z-index: 2;
+}
+
+.range .sliderValue span.show {
+  transform: translateX(-50%) scale(1);
+}
+
+.range .field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.range .field .value {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+.range .field .value.left {
+  left: -22px;
+}
+.range .field .value.right {
+  right: -43px;
+}
+
+.range .field input {
+  -webkit-appearance: none;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.range .field input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+#mute {
+  width: 100px;
+  height: 100px;
+  margin-bottom: -20px;
+}
+
+.content-mute {
+  display: flex;
+  width: 100px;
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  font-size: 24px;
 }

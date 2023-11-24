@@ -875,6 +875,8 @@ barra.addEventListener(
 
     if (v.volume != 0) {
       mute.checked = false;
+    } else if (v.volume === 0) {
+      mute.checked = true;
     }
   },
   true
@@ -895,3 +897,11 @@ mute.addEventListener(
   },
   true
 );
+// const slideValue = document.getElementById("num");
+
+// barra.oninput = () => {
+//   let value = barra.value;
+//   slideValue.textContent = value;
+//   slideValue.style.length = value / 2 + "%";
+//   slideValue.classList.add("show");
+// };
