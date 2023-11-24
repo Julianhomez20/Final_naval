@@ -48,10 +48,9 @@ export function settings() {
   const settings = document.getElementById("botonAjustes");
   // Pantalla del menu
   const menu = document.getElementById("menu");
-
+  const botonVolumen = document.getElementById("volumenControl");
   settings.addEventListener("click", function () {
     menu.style.display = "none";
-    settings.style.display = "flex";
     botonVolumen.style.display = "flex";
   });
 };
@@ -63,4 +62,4 @@ export function juego() {
   play.addEventListener("click", function () {
     play.style.display = "none";
   });
-};
+}
