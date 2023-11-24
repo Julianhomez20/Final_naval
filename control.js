@@ -62,3 +62,13 @@ export function juego() {
     play.style.display = "none";
   });
 }
+
+export function backToMenu() {
+  const back = document.getElementById("back");
+  const botonVolumen = document.getElementById("volumenControl");
+  back.addEventListener("click", function () {
+    menu.style.display = "flex";
+    botonVolumen.style.display = "none";
+    juego.style.display = "none";
+  });
+}
