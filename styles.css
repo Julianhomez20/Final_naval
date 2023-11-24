@@ -575,8 +575,16 @@ img {
   margin-left: 6%;
 }
 
-/* Barco 1 (X) */
-.barcoX {
-  background-color: red;
-  /* Otros estilos que desees aplicar */
+#volumenControl {
+  width: 80%; /* Ancho en píxeles */
+  height: 70vh; /* Alto en píxeles */
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10.3%;
 }
+
+
+
+

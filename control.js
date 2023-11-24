@@ -17,7 +17,7 @@ export function botonJuego() {
     menu.style.display = "none";
     juego.style.display = "block";
   });
-}
+};
 
 export function IniciarJuego() {
   // Boton de jugar de la pantalla de reordenar
@@ -37,4 +37,28 @@ export function IniciarJuego() {
     generarMatrizJug1Def(matrizJug1);
     generarMatriz2Html(matrizAtaque);
   });
-}
+};
+
+// Función para pantalla de settings
+export function settings () {
+  const settings = document.getElementById("botonAjustes");
+  // Pantalla del menu
+  const menu = document.getElementById("menu");
+
+
+  settings.addEventListener('click', function(){
+    menu.style.display = "none";
+    settings.style.display = "flex";
+  });
+
+};
+// Función para iniciar juego desde la pantalla jugar
+export function juego () {
+  // Boton jugar de la pantalla del juego
+  const play = document.getElementById("jugar");
+
+  play.addEventListener('click', function(){
+    play.style.display = "none";
+  });
+
+};
