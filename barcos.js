@@ -863,3 +863,35 @@ user.addEventListener("keyup", (e) => {
   const nameUser = user.value;
   document.querySelector(".yBoard").innerHTML = nameUser;
 });
+
+const barra = document.getElementById("barra");
+const mute = document.getElementById("mute");
+
+barra.addEventListener(
+  "change",
+  function (ev) {
+    const v = document.getElementById("audioPlayer");
+    v.volume = ev.currentTarget.value;
+
+    if (v.volume != 0) {
+      mute.checked = false;
+    }
+  },
+  true
+);
+
+mute.addEventListener(
+  "change",
+  function (ev) {
+    const v = document.getElementById("audioPlayer");
+
+    if (ev.target.checked) {
+      v.volume = 0;
+      barra.value = 0;
+    } else {
+      v.volume = ev.currentTarget.value;
+      barra.value = ev.currentTarget.value;
+    }
+  },
+  true
+);

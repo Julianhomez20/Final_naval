@@ -582,3 +582,8 @@ img {
   flex-direction: row;
   margin-top: 10.3%;
 }
+
+.content-settings {
+  width: 70%;
+  height: 80vh;
+}
