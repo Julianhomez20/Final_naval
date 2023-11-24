@@ -6,6 +6,7 @@ import {
   matrizAtaque,
   matrizJug2,
 } from "./barcos.js";
+import { recorrerCoord1 } from "./juegoPrincipal.js";
 
 // Función del boton jugar en el menú
 export function botonJuego() {
@@ -18,7 +19,7 @@ export function botonJuego() {
     botonVolumen.style.display = "none";
     juego.style.display = "flex";
   });
-}
+};
 
 export function IniciarJuego() {
   // Boton de jugar de la pantalla de reordenar
@@ -36,11 +37,11 @@ export function IniciarJuego() {
     reordenar.style.display = "none";
     botonVolumen.style.display = "none";
     juegoPrincipal.style.display = "flex";
-    console.log(matrizJug1);
     generarMatrizJug1Def(matrizJug1);
     generarMatriz2Html(matrizAtaque);
+    recorrerCoord1();
   });
-}
+};
 
 // Función para pantalla de settings
 export function settings() {
@@ -53,7 +54,7 @@ export function settings() {
     settings.style.display = "flex";
     botonVolumen.style.display = "flex";
   });
-}
+};
 // Función para iniciar juego desde la pantalla jugar
 export function juego() {
   // Boton jugar de la pantalla del juego
@@ -62,4 +63,4 @@ export function juego() {
   play.addEventListener("click", function () {
     play.style.display = "none";
   });
-}
+};

@@ -9,8 +9,10 @@ const tabla1 = document.getElementById("matrixTable2");
 
 // Inicialización de array con las coordenadas de los barcos del jugador 1
 let coordOcupadas1 = [];
+export {coordOcupadas1}
 // Inicialización de array con las coordenadas de los barcos del jugador 2
 let coordOcupadas2 = [];
+export {coordOcupadas2};
 // Tablero Jugador
 let matrizJug1 = iniciarTablero1();
 export { matrizJug1 };
@@ -28,8 +30,8 @@ export function coordenadasB1J1(matrizJug1) {
    *      Posición -> Vertical
    */
   // Inicialización variables
-  let fila1,
-    columna1,
+  let fila1J1,
+    columna1J1,
     fila1B1J1,
     columna1B1J1,
     fila2B1J1,
@@ -51,11 +53,11 @@ export function coordenadasB1J1(matrizJug1) {
      * Dadas las dimensiones del barco y la posición se genera una fila
      * La fila tiene el rango de 1-6 para que tenga espacio para ubicar las dos celdas restantes
      */
-    fila1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
-    columna1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
-    nuevaCord = [fila1, columna1];
-    coordB1J1.push([fila1, columna1]);
-  }
+    fila1J1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
+    columna1J1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
+    nuevaCord = [fila1J1, columna1J1];
+    coordB1J1.push([fila1J1, columna1J1]);
+  };
 
   // Se asignan a las variables los elementos del array de coordenadas
   fila1B1J1 = coordB1J1[0][0];
@@ -75,7 +77,7 @@ export function coordenadasB1J1(matrizJug1) {
   matrizJug1[fila1B1J1][columna1B1J1] = "X";
   matrizJug1[fila2B1J1][columna2B1J1] = "X";
   matrizJug1[fila3B1J1][columna3B1J1] = "X";
-}
+};
 
 // Función para generar coordenadas aleatorias del barco 2 Jugador 1
 
@@ -86,8 +88,8 @@ export function coordenadasB2J1(matrizJug1) {
    *      Posición -> Horizontal
    */
   //Inicialización variables
-  let fila2,
-    columna2,
+  let fila2J1,
+    columna2J1,
     fila1B2J1,
     columna1B2J1,
     fila2B2J1,
@@ -115,13 +117,12 @@ export function coordenadasB2J1(matrizJug1) {
 
     // Se generan mientras la variable sea False
     while (!coordenadasGeneradas) {
-      fila2 = Math.floor(Math.random() * 8) + 1;
-      columna2 = Math.floor(Math.random() * 7) + 1; // Rango valido 1-5
+      fila2J1 = Math.floor(Math.random() * 8) + 1;
+      columna2J1 = Math.floor(Math.random() * 7) + 1; // Rango valido 1-5
 
       // Se valida que la coordenada base no este en las coordenadas ya usadas
-      if (!coordOcupadas1.includes([fila2, columna2])) {
-        coordB2J1.push([fila2, columna2]);
-        coordOcupadas1.push([fila2, columna2]);
+      if (!coordOcupadas1.includes([fila2J1, columna2J1])) {
+        coordB2J1.push([fila2J1, columna2J1]);
 
         // Se asignan las coordenadas a las variables correctas
         fila1B2J1 = coordB2J1[0][0];
@@ -142,6 +143,7 @@ export function coordenadasB2J1(matrizJug1) {
           matrizJug1[fila4B2J1][columna4B2J1] != "X"
         ) {
           // En caso de cumplirse la condición se ingresan a los arrays
+          coordOcupadas1.push([fila1B2J1, columna1B2J1]);
           coordOcupadas1.push([fila2B2J1, columna2B2J1]);
           coordOcupadas1.push([fila3B2J1, columna3B2J1]);
           coordOcupadas1.push([fila4B2J1, columna4B2J1]);
@@ -160,11 +162,11 @@ export function coordenadasB2J1(matrizJug1) {
           // En caso de no cumplirse la condición se eliminan las coordenadas base
         } else {
           coordB2J1.pop();
-        }
-      }
-    }
-  }
-}
+        };
+      };
+    };
+  };
+};
 
 // Función para generar coordenadas aleatorias del barco 3 Jugador 1
 export function coordenadasB3J1(matrizJug1) {
@@ -174,7 +176,7 @@ export function coordenadasB3J1(matrizJug1) {
    */
 
   // Inicialización variables
-  let fila3, columna3, fila1B3J1, columna1B3J1;
+  let fila3J1, columna3J1, fila1B3J1, columna1B3J1;
   let coordB3J1 = [];
 
   /**
@@ -187,27 +189,27 @@ export function coordenadasB3J1(matrizJug1) {
 
     // Las coordenadas se generan hasta encontrar una posición adecuada dentro de la matriz
     while (!coordenadasGeneradas) {
-      fila3 = Math.floor(Math.random() * 10) + 1; // Rango valido 1-8
-      columna3 = Math.floor(Math.random() * 10) + 1; // Rango valido 1-8
+      fila3J1 = Math.floor(Math.random() * 10) + 1; // Rango valido 1-8
+      columna3J1 = Math.floor(Math.random() * 10) + 1; // Rango valido 1-8
 
       // Si la coordenada no esta ocupada por los otros barcos se ubica en esa posición
       if (
-        matrizJug1[fila3][columna3] != "X" &&
-        matrizJug1[fila3][columna3] != "Z"
+        matrizJug1[fila3J1][columna3J1] != "X" &&
+        matrizJug1[fila3J1][columna3J1] != "Z"
       ) {
-        coordB3J1.push([fila3, columna3]);
+        coordB3J1.push([fila3J1, columna3J1]);
         fila1B3J1 = coordB3J1[0][0];
         columna1B3J1 = coordB3J1[0][1];
         matrizJug1[fila1B3J1][columna1B3J1] = "B";
-        coordOcupadas1.push([fila1B3J1, columna1B3J1]);
+        coordOcupadas1.push([fila3J1, columna3J1]);
         coordenadasGeneradas = true;
         // En caso de estar ocupada la posición se elimina del array y se vuelve a generar
       } else {
         coordB3J1.pop();
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
 
 // Función para generar coordenadas aleatorias del barco 4 Jugador 1
 export function coordenadasB4J1(matrizJug1) {
@@ -217,7 +219,7 @@ export function coordenadasB4J1(matrizJug1) {
    */
 
   // Inicialización variables
-  let fila4, columna4, fila1B4J1, columna1B4J1;
+  let fila4J1, columna4J1, fila1B4J1, columna1B4J1;
   let coordB4J1 = [];
   /**
    * Con una estructura for se generan pares de coordenadas
@@ -229,16 +231,16 @@ export function coordenadasB4J1(matrizJug1) {
 
     // Las coordenadas se generan hasta encontrar una posición adecuada dentro de la matriz
     while (!coordenadasGeneradas) {
-      fila4 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
-      columna4 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
+      fila4J1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
+      columna4J1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
 
       // Si la coordenada no esta ocupada por los otros barcos se ubica en esa posición
       if (
-        matrizJug1[fila4][columna4] != "X" &&
-        matrizJug1[fila4][columna4] != "Z" &&
-        matrizJug1[fila4][columna4] != "B"
+        matrizJug1[fila4J1][columna4J1] != "X" &&
+        matrizJug1[fila4J1][columna4J1] != "Z" &&
+        matrizJug1[fila4J1][columna4J1] != "B"
       ) {
-        coordB4J1.push([fila4, columna4]);
+        coordB4J1.push([fila4J1, columna4J1]);
         fila1B4J1 = coordB4J1[0][0];
         columna1B4J1 = coordB4J1[0][1];
         matrizJug1[fila1B4J1][columna1B4J1] = "D";
@@ -247,10 +249,10 @@ export function coordenadasB4J1(matrizJug1) {
         // En caso de estar ocupada la posición se elimina del array y se vuelve a generar
       } else {
         coordB4J1.pop();
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
 
 // Función para generar coordenadas aleatorias del barco 5 Jugador 1
 export function coordenadasB5J1(matrizJug1) {
@@ -261,8 +263,8 @@ export function coordenadasB5J1(matrizJug1) {
    */
 
   // Inicialización variables
-  let fila5,
-    columna5,
+  let fila5J1,
+    columna5J1,
     fila1B5J1,
     columna1B5J1,
     fila2B5J1,
@@ -288,13 +290,13 @@ export function coordenadasB5J1(matrizJug1) {
      * La fila tiene el rango de 1-6 para que tenga espacio para ubicar las 4 celdas restantes
      */
     while (!coordenadasGeneradas) {
-      fila5 = Math.floor(Math.random() * 6) + 1; // Rango valido 1-4
-      columna5 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
+      fila5J1= Math.floor(Math.random() * 6) + 1; // Rango valido 1-4
+      columna5J1 = Math.floor(Math.random() * 8) + 1; // Rango valido 1-8
 
       // Se verifica que la coordenada base no este ocupada
-      if (!coordOcupadas1.includes([fila5, columna5])) {
-        coordB5J1.push([fila5, columna5]);
-        coordOcupadas1.push([fila5, columna5]);
+      if (!coordOcupadas1.includes([fila5J1, columna5J1])) {
+        coordB5J1.push([fila5J1, columna5J1]);
+        coordOcupadas1.push([fila5J1, columna5J1]);
 
         // Se asignan las coordenadas a las variables correctas
         fila1B5J1 = coordB5J1[0][0];
@@ -357,20 +359,21 @@ export function coordenadasB5J1(matrizJug1) {
           coordenadasGeneradas = true;
         } else {
           coordB5J1.pop();
-        }
-      }
-    }
-  }
-}
+        };
+      };
+    };
+  };
+};
 
 // Reune todas las funciones para ubicar los barcos del jugador 1
 export function randomBarcos() {
+  coordOcupadas1.splice(0, coordOcupadas1.length);
   coordenadasB1J1(matrizJug1);
   coordenadasB2J1(matrizJug1);
   coordenadasB3J1(matrizJug1);
   coordenadasB4J1(matrizJug1);
   coordenadasB5J1(matrizJug1);
-}
+};
 
 // Función para generar coordenadas aleatorias del barco 1 Jugador 2
 export function coordenadasB1J2(matrizJug2) {
@@ -706,18 +709,18 @@ export function coordenadasB5J2(matrizJug2) {
           coordenadasGeneradas = true;
         } else {
           coordB5J2.pop();
-        }
-      }
-    }
-  }
-}
+        };
+      };
+    };
+  };
+};
 
 export function randomBarcos2() {
   coordenadasB1J2(matrizJug2);
   coordenadasB2J2(matrizJug2);
   coordenadasB3J2(matrizJug2);
   coordenadasB4J2(matrizJug2);
-}
+};
 
 export function generarMatrizHTML(matrizJug1) {
   // Accede al div en el HTML usando su ID
@@ -729,7 +732,7 @@ export function generarMatrizHTML(matrizJug1) {
   // Elimina la tabla anterior, si existe
   while (matrizDiv.firstChild) {
     matrizDiv.removeChild(matrizDiv.firstChild);
-  }
+  };
 
   // Recorre la matriz y crea filas y celdas en la tabla
   for (let i = 0; i < matrizJug1.length; i++) {
@@ -745,19 +748,19 @@ export function generarMatrizHTML(matrizJug1) {
 
       if (i === 0) {
         celda.classList.add("primera-fila");
-      }
+      };
 
       if (j === 0) {
         celda.classList.add("primera-columna");
-      }
-    }
+      };
+    };
 
     tabla.appendChild(fila);
-  }
+  };
 
   // Agrega la nueva tabla al div en el HTML
   matrizDiv.appendChild(tabla);
-}
+};
 
 // Función para generar matriz para atacar
 export function generarMatriz2Html(matrizAtaque) {
@@ -777,19 +780,19 @@ export function generarMatriz2Html(matrizAtaque) {
 
       if (i === 0) {
         celda.classList.add("primera-fila");
-      }
+      };
 
       if (j === 0) {
         celda.classList.add("primera-columna");
-      }
-    }
+      };
+    };
 
     tabla2.appendChild(fila);
-  }
+  };
   // Agrega la nueva tabla al div en el HTML
   randomBarcos2();
   matriz2Div.appendChild(tabla2);
-}
+};
 
 export function reordenarBarcos() {
   let contadorReordenar = 0;
@@ -809,19 +812,19 @@ export function reordenarBarcos() {
       generarMatrizHTML(matrizJug1);
     } else {
       alert("You only have 3 attempts");
-    }
+    };
   });
-}
+};
 
 export function limpiarMatriz(matrizJug1) {
   for (let i = 1; i < matrizJug1.length; i++) {
     for (let j = 1; j < matrizJug1[i].length; j++) {
       if (matrizJug1[i][j] !== "-") {
         matrizJug1[i][j] = "-"; // Reemplaza el valor con "-"
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
 
 export function generarMatrizJug1Def(matrizJug1) {
   // Div de el HTML
@@ -843,18 +846,18 @@ export function generarMatrizJug1Def(matrizJug1) {
 
       if (i === 0) {
         celda.classList.add("primera-fila");
-      }
+      };
 
       if (j === 0) {
         celda.classList.add("primera-columna");
-      }
-    }
+      };
+    };
 
     tabla3.appendChild(fila);
-  }
+  };
   // Agrega la nueva tabla al div en el HTML
   matriz1Div.appendChild(tabla3);
-}
+};
 
 const user = document.getElementById("textUser");
 
